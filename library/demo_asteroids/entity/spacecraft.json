@@ -1,0 +1,56 @@
+{
+	"version": 1,
+	"type": "entityTemplate",
+	"dependencies": [
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.transform",
+		"spell.component.actor",
+		"spell.component.physics.body",
+		"spell.component.physics.fixture",
+		"spell.component.physics.shape.circle",
+		"spell.component.visualObject",
+		"demo_asteroids.asset.pixelShip1",
+		"demo_asteroids.component.spacecraft"
+	],
+	"config": {
+		"spell.component.2d.transform": {
+			"scale": [
+				4,
+				4
+			]
+		},
+		"spell.component.actor": {
+			"actions": {
+				"accelerate": {
+					"executing": false
+				},
+				"steerLeft": {
+					"executing": false
+				},
+				"steerRight": {
+					"executing": false
+				}
+			}
+		},
+		"demo_asteroids.component.spacecraft": {},
+		"spell.component.physics.body": {
+			"type": "dynamic"
+		},
+		"spell.component.physics.fixture": {
+			"restitution": 0
+		},
+		"spell.component.physics.shape.circle": {}
+	},
+	"children": [
+		{
+			"name": "fuselage",
+			"config": {
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:demo_asteroids.asset.pixelShip1"
+				},
+				"spell.component.2d.transform": {},
+				"spell.component.visualObject": {}
+			}
+		}
+	]
+}

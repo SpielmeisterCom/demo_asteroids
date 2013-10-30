@@ -1,0 +1,22 @@
+{
+	"type": "system",
+	"input": [
+		{
+			"name": "actors",
+			"componentId": "spell.component.actor"
+		},
+		{
+			"name": "transforms",
+			"componentId": "spell.component.2d.transform"
+		}
+	],
+	"version": 1,
+	"config": [
+		{
+			"name": "active",
+			"type": "boolean",
+			"default": true,
+			"doc": "if active is false the system will be skipped during processing"
+		}
+	]
+}

@@ -1,0 +1,31 @@
+@-webkit-viewport{width:device-width}
+@-moz-viewport{width:device-width}
+@-ms-viewport{width:device-width}
+@-o-viewport{width:device-width}
+@viewport{width:device-width}
+
+html {
+    overflow: hidden;
+    -ms-content-zooming: none;
+    -ms-touch-action: none;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+    background-color: #000;
+}
+
+#spell-screen {
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+}
+
+#spell-canvas {
+	-moz-transform: translate3d(0, 0, 0);
+	-webkit-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	-ms-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}

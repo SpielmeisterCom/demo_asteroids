@@ -1,0 +1,24 @@
+{
+	"type": "entityTemplate",
+	"config": {
+		"spell.component.2d.transform": {},
+		"spell.component.visualObject": {}
+	},
+	"children": [
+		{
+			"name": "appearance",
+			"config": {
+				"spell.component.2d.transform": {},
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:spellLogo.logo.appearance"
+				},
+				"spell.component.animation.keyFrameAnimation": {
+					"assetId": "keyFrameAnimation:spellLogo.logo.animation",
+					"looped": true
+				},
+				"spell.component.visualObject": {}
+			}
+		}
+	],
+	"version": 1
+}

@@ -1,0 +1,13 @@
+{
+	"type": "component",
+	"title": "",
+	"doc": "",
+	"attributes": [
+		{
+			"name": "thrusterForce",
+			"type": "number",
+			"default": "0"
+		}
+	],
+	"version": 1
+}

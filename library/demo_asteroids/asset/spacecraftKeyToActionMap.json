@@ -1,0 +1,10 @@
+{
+	"type": "asset",
+	"subtype": "keyToActionMap",
+	"config": {
+		"SPACE": "accelerate",
+		"LEFT_ARROW": "steerLeft",
+		"RIGHT_ARROW": "steerRight"
+	},
+	"version": 1
+}

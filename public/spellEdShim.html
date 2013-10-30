@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SpellEd</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=10, IE=9" >
+	<meta name="viewport" content="user-scalable=0" />
+	<link rel="stylesheet" href="main.css" type="text/css" />
+	<script type="text/javascript" src="spell.loader.js"></script>
+</head>
+
+<body>
+<div id="spell"></div>
+<script type="text/javascript">
+	( function() {
+		/**
+		 * Thanks to John Resig. http://ejohn.org/blog/flexible-javascript-events/
+		 *
+		 * @param obj
+		 * @param type
+		 * @param fn
+		 */
+		var addEvent = function( obj, type, fn ) {
+			if ( obj.attachEvent ) {
+				obj['e'+type+fn] = fn;
+				obj[type+fn] = function(){obj['e'+type+fn]( window.event );}
+				obj.attachEvent( 'on'+type, obj[type+fn] );
+			} else
+				obj.addEventListener( type, fn, false );
+		}
+
+		var getParam = function( name ) {
+			name = name.replace( /[\[]/, "\\\[" ).replace( /[\]]/, "\\\]" )
+			var regexS = '[\\?&]' + name + '=([^&#]*)'
+			var regex = new RegExp( regexS )
+			var results = regex.exec( window.location.href )
+
+			return ( results == null ? '' : results[ 1 ] )
+		}
+
+		var loadJson = function( url, onLoad ) {
+			var onError = function() {
+				throw 'Error: Could not load \'' + url + '\'.'
+			}
+
+			var onReadyStateChange = function() {
+				/*
+				 * readyState === 4 means 'DONE'; see https://developer.mozilla.org/en/DOM/XMLHttpRequest
+				 */
+				if( this.readyState !== 4 ) return
+
+				this.onload( request )
+			}
+
+			var onLoadWrapper = function() {
+				if( !!this.loaded ) return
+
+				this.loaded = true
+
+				if( this.status !== 200 ) {
+					onError()
+
+					return
+				}
+
+				onLoad( request )
+			}
+
+			var request = new XMLHttpRequest()
+			request.onload             = onLoadWrapper
+			request.onreadystatechange = onReadyStateChange
+			request.onerror            = onError
+			request.open( 'GET', url, true )
+			request.send( null )
+		}
+
+		var iframeId = getParam( 'iframeId' )
+
+		var sendMessageToEditor = function( type, payload ) {
+			var message = {
+				type : type,
+				payload : payload,
+				iframeId : iframeId
+			}
+
+			parent.window.postMessage( JSON.stringify( message ), '*' )
+		}
+
+		var isEmbeddedInIFrame = function() {
+			return window.location !== window.parent.location
+		}
+
+		var isEmbedded = isEmbeddedInIFrame()
+
+		var onInitialized = function( engineInstance ) {
+			if( isEmbedded ) {
+				// embedded mode, wait for messages from the editor
+				sendMessageToEditor( 'spelled.initialized' )
+
+			} else {
+				// stand-alone mode, load project.json and pass it to the engine
+				loadJson(
+					'../project.json',
+					function( request ) {
+						engineInstance.sendDebugMessage( {
+							type : 'spell.debug.application.startApplicationModule',
+							payload : {
+								applicationModule : JSON.parse( request.response || request.responseText )
+							}
+						} )
+					}
+				)
+			}
+		}
+
+		var handleMessageFromEditor = function( event ) {
+			var message = JSON.parse( event.data )
+
+			var isDebugMessage = message.type.indexOf( 'spell.debug' ) === 0
+
+			if( isDebugMessage ) {
+				spell.sendDebugMessage( message )
+			}
+		}
+
+		addEvent( window, 'message', handleMessageFromEditor )
+
+		var config = {
+			mode : isEmbedded ? 'development_embedded' : 'development_standalone',
+			platform : 'html5',
+			screenMode : 'fit',
+			libraryUrl : '../library'
+		}
+
+        var renderingBackEnd = getParam( 'renderingBackEnd' )
+        if( renderingBackEnd ) {
+            config.renderingBackEnd = renderingBackEnd
+        }
+
+		spell.start(
+			config,
+			onInitialized,
+			isEmbedded ? sendMessageToEditor : undefined
+		)
+	} )()
+</script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+{
+	"version": 1,
+	"type": "scene",
+	"systems": {
+		"update": [
+			{
+				"id": "spell.system.processKeyInput",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "demo_asteroids.system.aiControl",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "spell.system.physics",
+				"config": {
+					"active": true,
+					"debug": true,
+					"gravity": [
+						0,
+						0
+					],
+					"scale": 0.01
+				}
+			},
+			{
+				"id": "demo_asteroids.system.spacecraftIntegrator",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "demo_asteroids.system.endlessPlayingField",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "spell.system.clearKeyInput",
+				"config": {
+					"active": true
+				}
+			}
+		],
+		"render": [
+			{
+				"id": "spell.system.visibility",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "spell.system.keyFrameAnimation",
+				"config": {
+					"active": true
+				}
+			},
+			{
+				"id": "spell.system.render",
+				"config": {
+					"active": true,
+					"debug": false
+				}
+			},
+			{
+				"id": "spell.system.audio",
+				"config": {
+					"active": true
+				}
+			}
+		]
+	},
+	"libraryIds": [
+		"spell.OpenSans14px",
+		"spell.component.2d.graphics.animatedAppearance",
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.graphics.textureMatrix",
+		"spell.component.2d.graphics.camera",
+		"spell.component.2d.graphics.debug.box",
+		"spell.component.2d.graphics.debug.circle",
+		"spell.component.2d.graphics.geometry.quad",
+		"spell.component.2d.graphics.shape.rectangle",
+		"spell.component.2d.graphics.spriteSheetAppearance",
+		"spell.component.2d.graphics.textAppearance",
+		"spell.component.2d.graphics.tilemap",
+		"spell.component.2d.transform",
+		"spell.component.actor",
+		"spell.component.animation.keyFrameAnimation",
+		"spell.component.audio.soundEmitter",
+		"spell.component.entityComposite.children",
+		"spell.component.entityComposite.parent",
+		"spell.component.entityComposite.root",
+		"spell.component.eventHandlers",
+		"spell.component.inputDefinition",
+		"spell.component.physics.body",
+		"spell.component.physics.contactTrigger",
+		"spell.component.physics.fixture",
+		"spell.component.physics.shape.box",
+		"spell.component.physics.shape.circle",
+		"spell.component.visualObject",
+		"spell.component.entityMetaData",
+		"spell.defaultAppearance",
+		"spell.entity.2d.graphics.camera",
+		"spell.entity.inputDefinition",
+		"spell.system.audio",
+		"spell.system.clearKeyInput",
+		"spell.system.keyFrameAnimation",
+		"spell.system.physics",
+		"spell.system.processKeyInput",
+		"spell.system.render",
+		"spell.system.visibility",
+		"spellLogo.logo.animation",
+		"spellLogo.logo.appearance",
+		"spellLogo.logo.entity",
+		"demo_asteroids.asset.Impact",
+		"demo_asteroids.asset.LCARS 25",
+		"demo_asteroids.asset.Press Start 2P 8",
+		"demo_asteroids.asset.asteroid1",
+		"demo_asteroids.asset.asteroid2",
+		"demo_asteroids.asset.pixelShip1",
+		"demo_asteroids.asset.pixelShip2",
+		"demo_asteroids.asset.shield",
+		"demo_asteroids.asset.spacecraftKeyToActionMap",
+		"demo_asteroids.asset.threeRingsAnimation",
+		"demo_asteroids.asset.threeRingsSpriteSheet",
+		"demo_asteroids.component.spacecraft",
+		"demo_asteroids.entity.alienSpacecraft",
+		"demo_asteroids.entity.asteroid",
+		"demo_asteroids.entity.spacecraft",
+		"demo_asteroids.system.aiControl",
+		"demo_asteroids.system.endlessPlayingField",
+		"demo_asteroids.system.spacecraftIntegrator"
+	],
+	"entities": [
+		{
+			"name": "camera",
+			"entityTemplateId": "spell.entity.2d.graphics.camera",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						512,
+						384
+					]
+				},
+				"spell.component.2d.graphics.camera": {
+					"width": 1024,
+					"height": 768,
+					"active": true
+				}
+			}
+		},
+		{
+			"name": "spacecraft (ai)",
+			"entityTemplateId": "demo_asteroids.entity.spacecraft",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						128,
+						128
+					]
+				},
+				"spell.component.actor": {
+					"id": "aiControlled"
+				},
+				"demo_asteroids.component.spacecraft": {
+					"thrusterForce": 25
+				},
+				"spell.component.physics.shape.circle": {
+					"radius": 43
+				}
+			},
+			"children": [
+				{
+					"name": "shield",
+					"config": {
+						"spell.component.2d.transform": {
+							"scale": [
+								0.28,
+								0.28
+							]
+						},
+						"spell.component.visualObject": {
+							"opacity": 0.33
+						},
+						"spell.component.2d.graphics.appearance": {
+							"assetId": "appearance:demo_asteroids.asset.shield"
+						}
+					}
+				},
+				{
+					"name": "fuselage",
+					"config": {
+						"spell.component.2d.graphics.appearance": {
+							"assetId": "appearance:demo_asteroids.asset.pixelShip2"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "spacecraft (player)",
+			"entityTemplateId": "demo_asteroids.entity.spacecraft",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						400,
+						250
+					],
+					"rotation": 0.2
+				},
+				"spell.component.actor": {
+					"id": "playerControlled"
+				},
+				"demo_asteroids.component.spacecraft": {
+					"thrusterForce": 15
+				},
+				"spell.component.physics.shape.circle": {
+					"radius": 23
+				}
+			},
+			"children": [
+				{
+					"name": "label",
+					"config": {
+						"spell.component.2d.graphics.textAppearance": {
+							"text": "Player",
+							"assetId": "font:demo_asteroids.asset.Press Start 2P 8",
+							"spacing": -2
+						},
+						"spell.component.2d.transform": {
+							"scale": [
+								0.33,
+								0.33
+							],
+							"translation": [
+								-8,
+								-10
+							]
+						},
+						"spell.component.visualObject": {}
+					}
+				},
+				{
+					"name": "label2",
+					"config": {
+						"spell.component.2d.graphics.textAppearance": {
+							"assetId": "font:demo_asteroids.asset.LCARS 25",
+							"text": "Star Fleet"
+						},
+						"spell.component.2d.transform": {
+							"scale": [
+								0.2,
+								0.2
+							],
+							"translation": [
+								-8.5,
+								-16
+							]
+						},
+						"spell.component.visualObject": {}
+					}
+				}
+			]
+		},
+		{
+			"name": "alienSpacecraft (big)",
+			"entityTemplateId": "demo_asteroids.entity.alienSpacecraft",
+			"config": {
+				"spell.component.2d.transform": {
+					"scale": [
+						2,
+						2
+					],
+					"translation": [
+						70,
+						400
+					]
+				},
+				"spell.component.2d.graphics.animatedAppearance": {
+					"assetId": "animation:demo_asteroids.asset.threeRingsAnimation",
+					"offset": 500,
+					"replaySpeed": 0.75
+				},
+				"spell.component.actor": {
+					"id": "aiControlled",
+					"actions": {
+						"accelerate": {
+							"executing": false
+						},
+						"steerLeft": {
+							"executing": false
+						},
+						"steerRight": {
+							"executing": false
+						}
+					}
+				},
+				"demo_asteroids.component.spacecraft": {
+					"thrusterForce": 300
+				},
+				"spell.component.physics.shape.circle": {
+					"radius": 85
+				}
+			},
+			"children": [
+				{
+					"name": "shield",
+					"config": {
+						"spell.component.2d.graphics.appearance": {
+							"assetId": "appearance:demo_asteroids.asset.shield"
+						},
+						"spell.component.2d.transform": {
+							"scale": [
+								1.1,
+								1.1
+							]
+						},
+						"spell.component.visualObject": {
+							"opacity": 0.33
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "alienSpacecraft (small)",
+			"entityTemplateId": "demo_asteroids.entity.alienSpacecraft",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						700,
+						100
+					]
+				},
+				"spell.component.physics.shape.circle": {
+					"radius": 34
+				}
+			}
+		},
+		{
+			"name": "asteroid (big)",
+			"entityTemplateId": "demo_asteroids.entity.asteroid",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						600,
+						500
+					]
+				},
+				"spell.component.physics.shape.circle": {
+					"radius": 30
+				}
+			},
+			"children": [
+				{
+					"name": "body",
+					"config": {
+						"spell.component.2d.graphics.appearance": {
+							"assetId": "appearance:demo_asteroids.asset.asteroid1"
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "asteroid2",
+			"entityTemplateId": "demo_asteroids.entity.asteroid",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						725,
+						650
+					]
+				}
+			}
+		},
+		{
+			"name": "asteroid3",
+			"entityTemplateId": "demo_asteroids.entity.asteroid",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						300,
+						700
+					]
+				},
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:demo_asteroids.asset.asteroid2"
+				}
+			}
+		},
+		{
+			"name": "asteroid4",
+			"entityTemplateId": "demo_asteroids.entity.asteroid",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						250,
+						350
+					]
+				},
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:demo_asteroids.asset.asteroid2"
+				}
+			}
+		},
+		{
+			"name": "asteroid5",
+			"entityTemplateId": "demo_asteroids.entity.asteroid",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						25,
+						75
+					]
+				},
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:demo_asteroids.asset.asteroid2"
+				}
+			}
+		},
+		{
+			"name": "player key input to actor/action mapping",
+			"entityTemplateId": "spell.entity.inputDefinition",
+			"config": {
+				"spell.component.inputDefinition": {
+					"actorId": "playerControlled",
+					"assetId": "keyToActionMap:demo_asteroids.asset.spacecraftKeyToActionMap"
+				}
+			}
+		},
+		{
+			"name": "demo label",
+			"config": {
+				"spell.component.2d.graphics.textAppearance": {
+					"text": "Asteroid Demo",
+					"assetId": "font:demo_asteroids.asset.Impact"
+				},
+				"spell.component.2d.transform": {
+					"translation": [
+						8,
+						0
+					]
+				},
+				"spell.component.visualObject": {
+					"layer": 2,
+					"opacity": 0.5
+				}
+			}
+		},
+		{
+			"name": "spelljs logo",
+			"entityTemplateId": "spellLogo.logo.entity",
+			"config": {
+				"spell.component.2d.transform": {
+					"translation": [
+						935,
+						35
+					],
+					"scale": [
+						0.75,
+						0.75
+					]
+				},
+				"spell.component.visualObject": {
+					"layer": 2
+				}
+			}
+		}
+	]
+}

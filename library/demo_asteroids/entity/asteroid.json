@@ -1,0 +1,41 @@
+{
+	"version": 1,
+	"type": "entityTemplate",
+	"dependencies": [
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.transform",
+		"spell.component.physics.body",
+		"spell.component.physics.fixture",
+		"spell.component.physics.shape.circle",
+		"spell.component.visualObject",
+		"demo_asteroids.asset.asteroid2"
+	],
+	"config": {
+		"spell.component.2d.transform": {
+			"scale": [
+				4,
+				4
+			]
+		},
+		"spell.component.visualObject": {},
+		"spell.component.physics.body": {
+			"type": "dynamic"
+		},
+		"spell.component.physics.fixture": {},
+		"spell.component.physics.shape.circle": {
+			"radius": 14
+		}
+	},
+	"children": [
+		{
+			"name": "body",
+			"config": {
+				"spell.component.2d.graphics.appearance": {
+					"assetId": "appearance:demo_asteroids.asset.asteroid2"
+				},
+				"spell.component.2d.transform": {},
+				"spell.component.visualObject": {}
+			}
+		}
+	]
+}

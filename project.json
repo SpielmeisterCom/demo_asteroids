@@ -1,0 +1,17 @@
+{
+	"version": 1,
+	"config": {
+		"projectId": "demo_asteroids",
+		"screenSize": [
+			1024,
+			768
+		],
+		"supportedLanguages": []
+	},
+	"startScene": "demo_asteroids.scene.Game",
+	"type": "project",
+	"scenes": [
+		"demo_asteroids.scene.Game"
+	],
+	"apiVersion": "0.8.29"
+}
