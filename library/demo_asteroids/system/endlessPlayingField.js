@@ -12,7 +12,7 @@ define(
 			topBorder        = playingFieldSize[ 1 ] + border,
 			bottomBorder     = 0 - border
 
-		var updatePosition = function( world, bodies, transforms ) {
+		var updatePosition = function( world, entityManager, bodies, transforms ) {
 			for( var id in bodies ) {
 				var transform = transforms[ id ],
 					position  = transform.translation,
@@ -40,12 +40,12 @@ define(
 			}
 		}
 
-		var init = function( spell ) {
-			this.world = spell.box2dWorlds.main
+		var init = function( spell ) {		
+			this.world = spell.world
 		}
 
 		var process = function( spell, timeInMs, deltaTimeInMs ) {
-			updatePosition( this.world, this.bodies, this.transforms )
+			updatePosition( this.world, spell.entityManager, this.bodies, this.transforms )
 		}
 
 

@@ -1,0 +1,9 @@
+{
+	"version": 1,
+	"type": "script",
+	"dependencies": [
+		"demo_asteroids.asset.sound.asteroidExplosion",
+		"demo_asteroids.asset.sound.asteroidExplosion2",
+		"demo_asteroids.asset.sound.asteroidExplosion3"
+	]
+}

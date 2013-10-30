@@ -1,0 +1,39 @@
+{
+	"version": 1,
+	"type": "component",
+	"title": "",
+	"doc": "",
+	"icon": "",
+	"dependencies": [],
+	"group": "zzz",
+	"attributes": [
+		{
+			"name": "shooting",
+			"default": false,
+			"doc": "",
+			"engineInternal": false,
+			"type": "boolean"
+		},
+		{
+			"name": "rate",
+			"default": 200,
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		},
+		{
+			"name": "tempo",
+			"default": 20,
+			"doc": "",
+			"engineInternal": false,
+			"type": "number"
+		},
+		{
+			"name": "lastShot",
+			"default": "0",
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		}
+	]
+}

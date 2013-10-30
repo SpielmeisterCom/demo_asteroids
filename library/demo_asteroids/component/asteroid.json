@@ -1,0 +1,25 @@
+{
+	"version": 1,
+	"type": "component",
+	"title": "",
+	"doc": "",
+	"icon": "",
+	"dependencies": [],
+	"group": "zzz",
+	"attributes": [
+		{
+			"name": "splitUps",
+			"default": 4,
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		},
+		{
+			"name": "points",
+			"default": 10,
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		}
+	]
+}

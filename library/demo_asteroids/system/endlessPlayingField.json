@@ -1,5 +1,11 @@
 {
+	"version": 1,
 	"type": "system",
+	"dependencies": [
+		"demo_asteroids.component.physicsBody",
+		"spell.component.2d.transform",
+		"spell.component.physics.body"
+	],
 	"input": [
 		{
 			"name": "transforms",
@@ -7,10 +13,9 @@
 		},
 		{
 			"name": "bodies",
-			"componentId": "spell.component.physics.body"
+			"componentId": "demo_asteroids.component.physicsBody"
 		}
 	],
-	"version": 1,
 	"config": [
 		{
 			"name": "active",

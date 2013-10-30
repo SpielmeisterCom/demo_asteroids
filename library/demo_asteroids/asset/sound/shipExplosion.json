@@ -1,0 +1,10 @@
+{
+	"version": 1,
+	"type": "asset",
+	"subtype": "sound",
+	"config": {
+		"localized": false,
+		"localization": ""
+	},
+	"dependencies": []
+}

@@ -1,0 +1,26 @@
+{
+	"version": 1,
+	"type": "system",
+	"dependencies": [
+		"demo_asteroids.component.physicsBody",
+		"spell.component.2d.transform"
+	],
+	"input": [
+		{
+			"name": "bodies",
+			"componentId": "demo_asteroids.component.physicsBody"
+		},
+		{
+			"name": "transformations",
+			"componentId": "spell.component.2d.transform"
+		}
+	],
+	"config": [
+		{
+			"name": "active",
+			"type": "boolean",
+			"default": true,
+			"doc": "if active is false the system will be skipped during processing"
+		}
+	]
+}

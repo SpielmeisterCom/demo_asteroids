@@ -2,28 +2,39 @@
 	"version": 1,
 	"type": "entityTemplate",
 	"dependencies": [
+		"demo_asteroids.asset.asteroid2",
+		"demo_asteroids.asset.sound.asteroidExplosion",
+		"demo_asteroids.asset.sound.asteroidExplosion2",
+		"demo_asteroids.asset.sound.asteroidExplosion3",
+		"demo_asteroids.component.asteroid",
+		"demo_asteroids.component.physicsBody",
+		"demo_asteroids.script.asteroidsBehavior",
 		"spell.component.2d.graphics.appearance",
 		"spell.component.2d.transform",
-		"spell.component.physics.body",
-		"spell.component.physics.fixture",
-		"spell.component.physics.shape.circle",
-		"spell.component.visualObject",
-		"demo_asteroids.asset.asteroid2"
+		"spell.component.eventHandlers",
+		"spell.component.visualObject"
 	],
 	"config": {
 		"spell.component.2d.transform": {
 			"scale": [
-				4,
-				4
+				16,
+				16
 			]
 		},
 		"spell.component.visualObject": {},
-		"spell.component.physics.body": {
-			"type": "dynamic"
+		"demo_asteroids.component.asteroid": {
+			"splitUps": 2
 		},
-		"spell.component.physics.fixture": {},
-		"spell.component.physics.shape.circle": {
-			"radius": 14
+		"demo_asteroids.component.physicsBody": {
+			"maxVelocity": [
+				15,
+				15
+			],
+			"collisionGroup": 1,
+			"radius": 45
+		},
+		"spell.component.eventHandlers": {
+			"assetId": "script:demo_asteroids.script.asteroidsBehavior"
 		}
 	},
 	"children": [

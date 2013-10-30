@@ -8,10 +8,11 @@
 		],
 		"supportedLanguages": []
 	},
-	"startScene": "demo_asteroids.scene.Game",
+	"startScene": "demo_asteroids.scene.Start",
 	"type": "project",
+	"apiVersion": "0.8.41",
 	"scenes": [
-		"demo_asteroids.scene.Game"
-	],
-	"apiVersion": "0.8.29"
+		"demo_asteroids.scene.Game",
+		"demo_asteroids.scene.Start"
+	]
 }

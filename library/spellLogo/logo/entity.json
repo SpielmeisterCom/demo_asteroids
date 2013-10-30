@@ -1,5 +1,14 @@
 {
+	"version": 1,
 	"type": "entityTemplate",
+	"dependencies": [
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.transform",
+		"spell.component.animation.keyFrameAnimation",
+		"spell.component.visualObject",
+		"spellLogo.logo.animation",
+		"spellLogo.logo.appearance"
+	],
 	"config": {
 		"spell.component.2d.transform": {},
 		"spell.component.visualObject": {}
@@ -19,6 +28,5 @@
 				"spell.component.visualObject": {}
 			}
 		}
-	],
-	"version": 1
+	]
 }

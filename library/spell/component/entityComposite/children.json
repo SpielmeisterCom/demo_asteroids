@@ -1,0 +1,16 @@
+{
+	"type": "component",
+	"readonly": true,
+	"engineInternal": true,
+	"title": "Children Entities",
+	"doc": "This component holds references to entities that are subordinate to the current entity.",
+	"attributes": [
+		{
+			"name": "ids",
+			"doc": "a list of children entity ids",
+			"type": "list",
+			"default": []
+		}
+	],
+	"version": 1
+}

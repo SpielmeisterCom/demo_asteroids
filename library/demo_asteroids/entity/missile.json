@@ -1,0 +1,38 @@
+{
+	"version": 1,
+	"type": "entityTemplate",
+	"dependencies": [
+		"demo_asteroids.asset.shield",
+		"demo_asteroids.asset.sound.shoot",
+		"demo_asteroids.component.physicsBody",
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.transform",
+		"spell.component.audio.soundEmitter",
+		"spell.component.visualObject"
+	],
+	"config": {
+		"spell.component.2d.graphics.appearance": {
+			"assetId": "appearance:demo_asteroids.asset.shield"
+		},
+		"spell.component.2d.transform": {
+			"scale": [
+				0.1,
+				0.1
+			]
+		},
+		"spell.component.visualObject": {},
+		"demo_asteroids.component.physicsBody": {
+			"maxVelocity": [
+				100,
+				100
+			],
+			"radius": 2,
+			"collisionGroup": 3
+		},
+		"spell.component.audio.soundEmitter": {
+			"assetId": "sound:demo_asteroids.asset.sound.shoot",
+			"volume": 0.1
+		}
+	},
+	"children": []
+}

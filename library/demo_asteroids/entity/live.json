@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"type": "entityTemplate",
+	"dependencies": [
+		"demo_asteroids.asset.pixelShip1",
+		"spell.component.2d.graphics.appearance",
+		"spell.component.2d.transform",
+		"spell.component.visualObject"
+	],
+	"config": {
+		"spell.component.2d.graphics.appearance": {
+			"assetId": "appearance:demo_asteroids.asset.pixelShip1"
+		},
+		"spell.component.2d.transform": {},
+		"spell.component.visualObject": {
+			"opacity": 0
+		}
+	},
+	"children": []
+}

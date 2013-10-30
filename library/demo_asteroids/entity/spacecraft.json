@@ -2,44 +2,44 @@
 	"version": 1,
 	"type": "entityTemplate",
 	"dependencies": [
+		"demo_asteroids.asset.pixelShip1",
+		"demo_asteroids.component.physicsBody",
+		"demo_asteroids.component.spacecraft",
+		"demo_asteroids.component.weapon",
+		"demo_asteroids.script.spacecraftBehavior",
 		"spell.component.2d.graphics.appearance",
 		"spell.component.2d.transform",
-		"spell.component.actor",
-		"spell.component.physics.body",
-		"spell.component.physics.fixture",
-		"spell.component.physics.shape.circle",
-		"spell.component.visualObject",
-		"demo_asteroids.asset.pixelShip1",
-		"demo_asteroids.component.spacecraft"
+		"spell.component.controllable",
+		"spell.component.eventHandlers",
+		"spell.component.visualObject"
 	],
 	"config": {
 		"spell.component.2d.transform": {
 			"scale": [
 				4,
 				4
-			]
+			],
+			"translation": [
+				400,
+				250
+			],
+			"rotation": 0.01
 		},
-		"spell.component.actor": {
-			"actions": {
-				"accelerate": {
-					"executing": false
-				},
-				"steerLeft": {
-					"executing": false
-				},
-				"steerRight": {
-					"executing": false
-				}
-			}
+		"spell.component.controllable": {},
+		"demo_asteroids.component.spacecraft": {
+			"thrusterForce": 5
 		},
-		"demo_asteroids.component.spacecraft": {},
-		"spell.component.physics.body": {
-			"type": "dynamic"
+		"spell.component.eventHandlers": {
+			"assetId": "script:demo_asteroids.script.spacecraftBehavior"
 		},
-		"spell.component.physics.fixture": {
-			"restitution": 0
-		},
-		"spell.component.physics.shape.circle": {}
+		"demo_asteroids.component.physicsBody": {
+			"collisionGroup": 2,
+			"maxVelocity": [
+				25,
+				25
+			],
+			"radius": 22
+		}
 	},
 	"children": [
 		{
@@ -50,6 +50,21 @@
 				},
 				"spell.component.2d.transform": {},
 				"spell.component.visualObject": {}
+			}
+		},
+		{
+			"name": "weapon",
+			"config": {
+				"demo_asteroids.component.weapon": {
+					"tempo": 12,
+					"rate": 300
+				},
+				"spell.component.2d.transform": {
+					"translation": [
+						0,
+						8
+					]
+				}
 			}
 		}
 	]

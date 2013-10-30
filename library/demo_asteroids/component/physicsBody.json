@@ -1,0 +1,45 @@
+{
+	"version": 1,
+	"type": "component",
+	"title": "",
+	"doc": "",
+	"icon": "",
+	"dependencies": [],
+	"group": "zzz",
+	"attributes": [
+		{
+			"name": "velocity",
+			"default": [
+				0,
+				0
+			],
+			"doc": "",
+			"engineInternal": false,
+			"type": "vec2"
+		},
+		{
+			"name": "maxVelocity",
+			"default": [
+				0,
+				0
+			],
+			"doc": "",
+			"engineInternal": false,
+			"type": "vec2"
+		},
+		{
+			"name": "radius",
+			"default": "0",
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		},
+		{
+			"name": "collisionGroup",
+			"default": "0",
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		}
+	]
+}

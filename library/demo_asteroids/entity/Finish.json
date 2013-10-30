@@ -1,0 +1,55 @@
+{
+	"version": 1,
+	"type": "entityTemplate",
+	"dependencies": [
+		"demo_asteroids.asset.LCARS 25",
+		"demo_asteroids.asset.Press Start 2P 8",
+		"spell.component.2d.graphics.textAppearance",
+		"spell.component.2d.transform",
+		"spell.component.visualObject"
+	],
+	"config": {
+		"spell.component.2d.transform": {
+			"translation": [
+				500,
+				400
+			],
+			"scale": [
+				3,
+				3
+			]
+		},
+		"spell.component.visualObject": {}
+	},
+	"children": [
+		{
+			"name": "label",
+			"config": {
+				"spell.component.2d.graphics.textAppearance": {
+					"text": "Game Over",
+					"assetId": "font:demo_asteroids.asset.LCARS 25",
+					"align": "center"
+				},
+				"spell.component.2d.transform": {},
+				"spell.component.visualObject": {}
+			}
+		},
+		{
+			"name": "restartButton",
+			"config": {
+				"spell.component.2d.graphics.textAppearance": {
+					"text": "Play again? Press enter",
+					"assetId": "font:demo_asteroids.asset.Press Start 2P 8",
+					"align": "center"
+				},
+				"spell.component.2d.transform": {
+					"translation": [
+						0,
+						-50
+					]
+				},
+				"spell.component.visualObject": {}
+			}
+		}
+	]
+}

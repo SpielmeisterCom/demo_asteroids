@@ -1,0 +1,12 @@
+{
+	"version": 1,
+	"type": "asset",
+	"subtype": "inputMap",
+	"config": {
+		"UP_ARROW": "accelerate",
+		"LEFT_ARROW": "steerLeft",
+		"RIGHT_ARROW": "steerRight",
+		"A": "shoot"
+	},
+	"dependencies": []
+}

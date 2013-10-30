@@ -1,13 +1,35 @@
 {
+	"version": 1,
 	"type": "component",
 	"title": "",
 	"doc": "",
+	"icon": "",
+	"dependencies": [],
+	"group": "zzz",
 	"attributes": [
 		{
 			"name": "thrusterForce",
-			"type": "number",
-			"default": "0"
+			"default": 0,
+			"doc": "",
+			"engineInternal": false,
+			"type": "number"
+		},
+		{
+			"name": "torque",
+			"default": 0,
+			"doc": "",
+			"engineInternal": false,
+			"type": "number"
+		},
+		{
+			"name": "force",
+			"default": [
+				0,
+				0
+			],
+			"doc": "",
+			"engineInternal": false,
+			"type": "vec2"
 		}
-	],
-	"version": 1
+	]
 }

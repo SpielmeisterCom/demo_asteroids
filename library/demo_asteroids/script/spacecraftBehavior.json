@@ -1,0 +1,7 @@
+{
+	"version": 1,
+	"type": "script",
+	"dependencies": [
+		"demo_asteroids.asset.sound.shipExplosion"
+	]
+}

@@ -1,0 +1,18 @@
+{
+	"version": 1,
+	"type": "component",
+	"title": "",
+	"doc": "",
+	"icon": "",
+	"dependencies": [],
+	"group": "zzz",
+	"attributes": [
+		{
+			"name": "lives",
+			"default": 3,
+			"doc": "",
+			"engineInternal": false,
+			"type": "integer"
+		}
+	]
+}

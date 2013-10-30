@@ -1,0 +1,14 @@
+{
+	"version": 1,
+	"type": "script",
+	"dependencies": [
+		"demo_asteroids.asset.LCARS 25",
+		"demo_asteroids.asset.Press Start 2P 8",
+		"demo_asteroids.entity.Finish",
+		"demo_asteroids.script.startButtonHandler",
+		"spell.component.2d.graphics.textAppearance",
+		"spell.component.2d.transform",
+		"spell.component.eventHandlers",
+		"spell.component.visualObject"
+	]
+}

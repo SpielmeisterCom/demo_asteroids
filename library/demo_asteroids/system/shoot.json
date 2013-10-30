@@ -1,0 +1,27 @@
+{
+	"version": 1,
+	"type": "system",
+	"dependencies": [
+		"demo_asteroids.component.weapon",
+		"demo_asteroids.entity.missile",
+		"spell.component.2d.transform"
+	],
+	"input": [
+		{
+			"name": "weapons",
+			"componentId": "demo_asteroids.component.weapon"
+		},
+		{
+			"name": "transformations",
+			"componentId": "spell.component.2d.transform"
+		}
+	],
+	"config": [
+		{
+			"name": "active",
+			"type": "boolean",
+			"default": true,
+			"doc": "if active is false the system will be skipped during processing"
+		}
+	]
+}

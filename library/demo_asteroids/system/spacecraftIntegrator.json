@@ -1,10 +1,11 @@
 {
+	"version": 1,
 	"type": "system",
+	"dependencies": [
+		"demo_asteroids.component.spacecraft",
+		"spell.component.2d.transform"
+	],
 	"input": [
-		{
-			"name": "actors",
-			"componentId": "spell.component.actor"
-		},
 		{
 			"name": "transforms",
 			"componentId": "spell.component.2d.transform"
@@ -14,7 +15,6 @@
 			"componentId": "demo_asteroids.component.spacecraft"
 		}
 	],
-	"version": 1,
 	"config": [
 		{
 			"name": "active",

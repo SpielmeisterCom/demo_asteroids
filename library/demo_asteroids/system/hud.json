@@ -1,16 +1,15 @@
 {
+	"version": 1,
 	"type": "system",
+	"dependencies": [
+		"demo_asteroids.component.player"
+	],
 	"input": [
 		{
-			"name": "actors",
-			"componentId": "spell.component.actor"
-		},
-		{
-			"name": "transforms",
-			"componentId": "spell.component.2d.transform"
+			"name": "players",
+			"componentId": "demo_asteroids.component.player"
 		}
 	],
-	"version": 1,
 	"config": [
 		{
 			"name": "active",
