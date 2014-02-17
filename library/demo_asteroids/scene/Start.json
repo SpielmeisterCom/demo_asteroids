@@ -30,12 +30,6 @@
 		],
 		"render": [
 			{
-				"id": "spell.system.visibility",
-				"config": {
-					"active": true
-				}
-			},
-			{
 				"id": "spell.system.keyFrameAnimation",
 				"config": {
 					"active": true
@@ -67,8 +61,6 @@
 		"spell.component.2d.graphics.appearance",
 		"spell.component.2d.graphics.camera",
 		"spell.component.2d.graphics.cameraMovement",
-		"spell.component.2d.graphics.debug.box",
-		"spell.component.2d.graphics.debug.circle",
 		"spell.component.2d.graphics.geometry.quad",
 		"spell.component.2d.graphics.shape.rectangle",
 		"spell.component.2d.graphics.spriteSheetAppearance",
@@ -80,10 +72,6 @@
 		"spell.component.audio.soundEmitter",
 		"spell.component.composite",
 		"spell.component.controllable",
-		"spell.component.entityComposite.children",
-		"spell.component.entityComposite.parent",
-		"spell.component.entityComposite.root",
-		"spell.component.entityMetaData",
 		"spell.component.eventHandlers",
 		"spell.component.metaData",
 		"spell.component.visualObject",
@@ -96,7 +84,6 @@
 		"spell.system.processInputCommands",
 		"spell.system.processPointerInput",
 		"spell.system.render",
-		"spell.system.visibility",
 		"spellLogo.logo.animation",
 		"spellLogo.logo.appearance",
 		"spellLogo.logo.entity"
