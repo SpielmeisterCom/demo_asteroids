@@ -176,7 +176,9 @@
 						10
 					]
 				},
-				"spell.component.visualObject": {}
+				"spell.component.visualObject": {
+					"layer": 1
+				}
 			},
 			"children": [
 				{
@@ -192,7 +194,9 @@
 								0
 							]
 						},
-						"spell.component.visualObject": {}
+						"spell.component.visualObject": {
+							"layer": 1
+						}
 					}
 				}
 			]

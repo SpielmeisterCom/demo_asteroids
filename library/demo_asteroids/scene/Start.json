@@ -241,7 +241,9 @@
 								-1
 							]
 						},
-						"spell.component.visualObject": {}
+						"spell.component.visualObject": {
+							"layer" : 1
+						}
 					}
 				}
 			]
